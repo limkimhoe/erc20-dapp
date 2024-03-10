@@ -13,6 +13,7 @@ function Main(props){
     //set params
     const [receiverAddress, setReceiverAddress] = useState("");
     const [transferAmount, setTransferAmount]   = useState("");
+    const [tokenAdress, setTokenAddress]   = useState("");
 
     //transfer eth from one account to other
     async function transfer(){
@@ -47,7 +48,21 @@ function Main(props){
         <div>
             <br/>
             <div style={{color:"blue", fontSize:"1.5rem"}}>
-                Welcome to DappBlocks!
+                Welcome to SOCToken (SOC)!
+            </div>
+            <br/>
+            <div style={{fontSize:"1.2rem"}}>
+                Token Address :
+            </div>
+            <div>
+                <input
+                    type="text"
+                    style={{height:"1.5vw", width:"30vw"}}
+                    onChange={(event) =>
+                        setTokenAddress(event.target.value)
+                    }
+                    placeholder="0x0000....."
+                />
             </div>
             <br/>
             <div style={{fontSize:"1.2rem"}}>
@@ -75,7 +90,7 @@ function Main(props){
                         setTransferAmount(event.target.value)
                     }
                     placeholder="0.0" 
-                /> ETH
+                /> Tokens
             </div>
             <br/>
             <div>
